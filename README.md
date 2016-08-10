@@ -22,16 +22,17 @@ Easy Way to request on mysql Server with NodeJS (Manage Queue)
     var pid = db.query.get('SELECT 1 + 1 as Solution', function(response){
             console.log(response.rows);
             console.log(response.length);
+            result1 = reponse;
         });
 
     var result2 = new Object;
     var pid2 = db.query.get('SELECT 1 + 1 as Solution', function(response){
             console.log(response.rows);
             console.log(response.length);
-            result = reponse;
+            result2 = reponse;
     });
 
-    //  checkQueue will check when both of this request will be released.
+    //  checkQueue will check when, both of this request will be released.
         will clean automaticaly PID queue
 
     db.query.checkQueue([pid, pid2], function(statement){
